@@ -2,7 +2,12 @@ module github.com/elissandrasantos/api-students
 
 go 1.22.2
 
-require github.com/labstack/echo/v4 v4.13.3
+require (
+	github.com/labstack/echo/v4 v4.13.3
+	github.com/rs/zerolog v1.34.0
+	gorm.io/driver/sqlite v1.5.7
+	gorm.io/gorm v1.26.0
+)
 
 require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
@@ -18,6 +23,4 @@ require (
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 	golang.org/x/time v0.8.0 // indirect
-	gorm.io/driver/sqlite v1.5.7 // indirect
-	gorm.io/gorm v1.26.0 // indirect
 )
