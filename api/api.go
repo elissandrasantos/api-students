@@ -34,7 +34,7 @@ func (api *API) ConfigureRoutes() {
 	api.Echo.POST("/students", api.createStudent)
 	api.Echo.GET("/students/:id", api.getStudent)
 	api.Echo.PUT("/students/:id", api.updateStudent)
-	api.Echo.DELETE("/student/:id", api.deleteStudent)
+	api.Echo.DELETE("/students/:id", api.deleteStudent)
 }
 
 func (api *API) Start() error {
