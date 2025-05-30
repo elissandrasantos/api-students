@@ -1,0 +1,142 @@
+basePath: /
+definitions:
+  api.StudentRequest:
+    properties:
+      active:
+        description: using bool as a pointer to force a true/false input
+        type: boolean
+      age:
+        type: integer
+      cpf:
+        type: integer
+      email:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@yourdomain.com
+    name: API Support
+    url: http://www.swagger.io/support
+  description: 'This is a sample server Student API. You can find out more about Swagger
+    at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).'
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Student API
+  version: "1.0"
+paths:
+  /students:
+    get:
+      consumes:
+      - application/json
+      description: 'TEST: Retrieve students details'
+      parameters:
+      - description: Filter by active status
+        in: query
+        name: active
+        type: boolean
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: placeholder for list of students
+          schema:
+            type: string
+      summary: Get a list of students (simplified)
+      tags:
+      - students
+    post:
+      consumes:
+      - application/json
+      description: 'TEST: Create student'
+      parameters:
+      - description: Student to create
+        in: body
+        name: student
+        required: true
+        schema:
+          $ref: '#/definitions/api.StudentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: placeholder for created student
+          schema:
+            type: string
+      summary: Create student (simplified)
+      tags:
+      - students
+  /students/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 'TEST: Delete student details'
+      parameters:
+      - description: Student ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: placeholder for delete confirmation
+          schema:
+            type: string
+      summary: Delete Student (simplified)
+      tags:
+      - students
+    get:
+      consumes:
+      - application/json
+      description: 'TEST: Retrieve student details using ID'
+      parameters:
+      - description: Student ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: placeholder for student details
+          schema:
+            type: string
+      summary: Get student by ID (simplified)
+      tags:
+      - students
+    put:
+      consumes:
+      - application/json
+      description: 'TEST: Update student details'
+      parameters:
+      - description: Student ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Student data to update (placeholder)
+        in: body
+        name: student_data_placeholder
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: placeholder for updated student
+          schema:
+            type: string
+      summary: Update Student by ID (simplified)
+      tags:
+      - students
+schemes:
+- http
+swagger: "2.0"
